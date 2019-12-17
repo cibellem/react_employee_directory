@@ -1,18 +1,13 @@
 import React from 'react';
-import NavBar from "./components/navBar"
-import Form from "./components/SearchBox"
-import TableData from "./components/TableData"
+
+import Container from "./components/Container"
 
 
 
 function App() {
   return (
-    <div>
+    <Container />
 
-      <NavBar />
-      <Form />
-      <TableData />
-    </div>
   )
 }
 
