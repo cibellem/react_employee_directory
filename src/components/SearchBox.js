@@ -7,7 +7,7 @@ function SearchBox(props) {
 
         <div className="row">
             <div className="input-field col s4">
-                <input value={props.value}
+                <input value={props.search}
                     onChange={props.handleInputChange}
                     id="search"
                     type="text"

@@ -17,13 +17,17 @@ function TableData(props) {
             </thead>
 
             <tbody>
-                <tr>
-                    <td>{props.picture}</td>
-                    <td>{props.name}</td>
-                    <td>{props.cell}</td>
-                    <td>{props.email}</td>
-                    <td>{props.dob}</td>
-                </tr>
+                {props.results.map(result => (
+                    <tr className="table" key={result.login.uuid}>
+
+                        <td> <img src={result.picture.medium} alt="" /></td>
+                        <td>  </td>
+                        <td>{result.cell}</td>
+                        <td>{result.email}</td>
+                        <td>{result.dob.date}</td>
+
+                    </tr>
+                ))}
             </tbody>
         </table >
     )
