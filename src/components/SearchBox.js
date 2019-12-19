@@ -16,6 +16,12 @@ function SearchBox(props) {
                     name="search"
                     className="validate "
                     placeholder="Search by name" />
+
+                {/* <datalist id="breeds">
+                    {props.breeds.map(breed => (
+                        <option value={breed} key={breed} />
+                    ))}
+                </datalist> */}
                 <button
                     type="submit"
                     className=" btn btn-medium waves-effect indigo lighten-3"

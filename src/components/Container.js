@@ -73,30 +73,13 @@ class Container extends Component {
     //when button search it's clicked
     handleSearch = event => {
         event.preventDefault();
-        API.getUsers().then(res => {
-            let employers = res.data.results
-            var firstName = this.state.search
-            const result = employers.map(item => {
-                return item.name.first
+        const { employees, search } = this.state;
 
+        const filteredEmployees = employees.filter(employee => employee.name.first.toLowerCase().includes(search.toLowerCase()));
 
-            });
-
-            result.forEach(element => {
-                console.log(element === firstName)
-
-            });
-            console.log(result)
-            // console.log(item.name.first)
-            console.log(firstName)
-
-
-
-
-
-
-        })
-
+        this.setState({
+            filteredEmployees
+        });
     }
 
 
