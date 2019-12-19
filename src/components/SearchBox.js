@@ -7,14 +7,15 @@ function SearchBox(props) {
 
         <div className="row">
             <div className="input-field col s4">
-                <input value={props.search}
+                <input
                     onChange={props.handleInputChange}
+                    value={props.value}
                     id="search"
                     type="text"
                     name="search"
                     className="validate"
-                    placeholder="Search" />
-                <button onClick={props.handleFormSubmit} >Search</button>
+                    placeholder="Search Employee" />
+                <button type="submit" onClick={props.handleSearch} >Search</button>
             </div>
         </div>
     )

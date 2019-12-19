@@ -5,11 +5,11 @@ function TableData(props) {
 
 
     return (
-        <table>
+        <table className="striped container">
             <thead>
                 <tr>
                     <th>Image</th>
-                    <th>Name</th>
+                    <th onClick={props.sortByName}>Name</th>
                     <th>Phone</th>
                     <th>E-mail</th>
                     <th>DOB</th>
@@ -19,9 +19,8 @@ function TableData(props) {
             <tbody>
                 {props.results.map(result => (
                     <tr className="table" key={result.login.uuid}>
-
                         <td> <img src={result.picture.medium} alt="" /></td>
-                        <td>  </td>
+                        <td>{result.name.first + " " + result.name.last}  </td>
                         <td>{result.cell}</td>
                         <td>{result.email}</td>
                         <td>{result.dob.date}</td>

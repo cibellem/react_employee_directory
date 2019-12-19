@@ -4,45 +4,75 @@ import NavBar from "./navBar"
 import SearchBox from "./SearchBox"
 import TableData from "./TableData"
 
-
-
 class Container extends Component {
 
     // Setting the component's initial state
     //here I set result as an object because this is the type of data I am going to be working with
     state = {
         search: "",
-        results: []
+        employees: [],
+        filteredEmployees: []
     };
 
 
-
-    //  lifecycle of a state // initialiation code 
+    // this is the initialization, what do you want the page to display when page it's first loaded
     componentDidMount() {
-        this.searchEmployee(this.state.results)
+        API.getUsers().then(res => this.setState({
+            employees: res.data.results,
+            filteredEmployees: res.data.results
+
+
+
+        })).catch(err => console.log(err))
     }
 
-    searchEmployee = query => {
-        API.getUsers(query)
-            .then(res => this.setState({ results: res.data.results }))
-            .catch(err => console.log(err));
-    };
 
 
-    //shows in the screen whatever it's being typed 
-    handleInputChange = event => {
-        // Getting the value and name of the input which triggered the change
-        const name = event.target.name;
-        const value = event.target.value;
+    sortByName = () => {
+
+        const filtereds = this.state.filteredEmployees;
+        const newFiltereds = filtereds.sort((a, b) => (a.name.first > b.name.first) ? 1 : -1)
+        console.log(newFiltereds)
+
+
         this.setState({
-            [name]: value //name it's in brackets because I dont want the property name I want the variable name
+
+            filteredEmployees: newFiltereds
+        })
+
+
+
+
+    }
+
+    handleInputChange = event => {
+        const value = event.target.value;
+        const name = event.target.name;
+        this.setState({
+            [name]: value
         });
     };
 
 
-    handleFormSubmit = event => {
+
+    employeeSearch = () => {
+        API.getUsers()
+            .then(res => this.setState({
+                filteredEmployees: res.data.results,
+                employees: res.data.results
+            }))
+            .catch(err => console.log(err))
+    }
+
+    //when button search it's clicked
+    handleSearch = event => {
         event.preventDefault();
-        this.searchEmployee(this.state.search);
+        //I want to return the names that match my search
+
+        this.employeeSearch(this.state.search)
+
+
+        // console.log(employees)
     };
 
 
@@ -52,10 +82,12 @@ class Container extends Component {
         return (
             <div>
                 <NavBar />
-                <SearchBox search={this.state.search}
-                    handleFormSubmit={this.handleFormSubmit}
+                <SearchBox
+                    value={this.state.search}
+                    handleSearch={this.handleSearch}
                     handleInputChange={this.handleInputChange} />
-                <TableData results={this.state.results}
+                <TableData results={this.state.filteredEmployees}
+                    sortByName={this.sortByName}
 
                 />
             </div >
