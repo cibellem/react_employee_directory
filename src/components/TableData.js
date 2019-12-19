@@ -1,5 +1,6 @@
 import React from "react";
-
+import Moment from 'react-moment';
+import "./style.css";
 
 function TableData(props) {
     console.log(props)
@@ -23,8 +24,8 @@ function TableData(props) {
                         <td> <img src={result.picture.medium} alt="" /></td>
                         <td>{result.name.first + " " + result.name.last}  </td>
                         <td>{result.cell}</td>
-                        <td>{result.email}</td>
-                        <td>{result.dob.date}</td>
+                        <td className="email">{result.email}</td>
+                        <td><Moment format="MM/DD/YYYY">{result.dob.date}</Moment></td>
 
                     </tr>
                 ))}

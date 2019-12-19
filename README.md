@@ -16,8 +16,8 @@ Employee search directory built with React.js components
 
 
 ### Technologies-Libraries
-- [React.js](https://getbootstrap.com/) 
-- [Materialize](https://getbootstrap.com/) 
+- [React.js](https://reactjs.org//) 
+- [Materialize](https://materializecss.com/) 
 
 
 
@@ -26,7 +26,7 @@ Employee search directory built with React.js components
 
 ### Link to deployed application
 Check it out! 
-https://cibellem.github.io/weatherapp/
+
 
 ### Demo 
 

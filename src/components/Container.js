@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import NavBar from "./navBar"
 import SearchBox from "./SearchBox"
 import TableData from "./TableData"
+import "./style.css";
 
 class Container extends Component {
 
@@ -53,7 +54,6 @@ class Container extends Component {
     handleInputChange = event => {
         const value = event.target.value;
         const name = event.target.name;
-
         this.setState({
             [name]: value
         });
@@ -76,23 +76,19 @@ class Container extends Component {
         API.getUsers().then(res => {
             let employers = res.data.results
             var firstName = this.state.search
-
-            const result = employers.map(item => item.name.first);
-            if (result === firstName) {
-                console.log("yay!!!")
-            }
+            const result = employers.map(item => {
+                return item.name.first
 
 
+            });
 
+            result.forEach(element => {
+                console.log(element === firstName)
 
+            });
             console.log(result)
-
-
-            console.log()
-
-
-            // let apicallFiltered = apicall.filter(item => item.name.first.length > 5)
-            // return apicallFiltered
+            // console.log(item.name.first)
+            console.log(firstName)
 
 
 
