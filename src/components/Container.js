@@ -7,11 +7,13 @@ import TableData from "./TableData"
 class Container extends Component {
 
     // Setting the component's initial state
-    //here I set result as an object because this is the type of data I am going to be working with
+
     state = {
         search: "",
         employees: [],
-        filteredEmployees: []
+        filteredEmployees: [],
+        order: "asc"
+
     };
 
 
@@ -20,41 +22,45 @@ class Container extends Component {
         API.getUsers().then(res => this.setState({
             employees: res.data.results,
             filteredEmployees: res.data.results
-
-
-
         })).catch(err => console.log(err))
     }
 
-
+    //if "name" it's clicked employee are shown by asc/desc order
 
     sortByName = () => {
-
         const filtereds = this.state.filteredEmployees;
-        const newFiltereds = filtereds.sort((a, b) => (a.name.first > b.name.first) ? 1 : -1)
-        console.log(newFiltereds)
+        if (this.state.order === "asc") {
+            const sorteds = filtereds.sort((a, b) => (a.name.first > b.name.first) ? 1 : -1)
+            console.log(sorteds)
 
+            this.setState({
+                filteredEmployees: sorteds,
+                order: "desc"
+            })
+        } else {
 
-        this.setState({
+            const sorteds = filtereds.sort((a, b) => (a.name.first > b.name.first) ? -1 : 1)
+            console.log(sorteds)
 
-            filteredEmployees: newFiltereds
-        })
+            this.setState({
+                filteredEmployees: sorteds,
+                order: "asc"
+            })
 
-
-
-
+        }
     }
 
     handleInputChange = event => {
         const value = event.target.value;
         const name = event.target.name;
+
         this.setState({
             [name]: value
         });
     };
 
 
-
+    //API call
     employeeSearch = () => {
         API.getUsers()
             .then(res => this.setState({
@@ -67,13 +73,35 @@ class Container extends Component {
     //when button search it's clicked
     handleSearch = event => {
         event.preventDefault();
-        //I want to return the names that match my search
+        API.getUsers().then(res => {
+            let employers = res.data.results
+            var firstName = this.state.search
 
-        this.employeeSearch(this.state.search)
+            const result = employers.map(item => item.name.first);
+            if (result === firstName) {
+                console.log("yay!!!")
+            }
 
 
-        // console.log(employees)
-    };
+
+
+            console.log(result)
+
+
+            console.log()
+
+
+            // let apicallFiltered = apicall.filter(item => item.name.first.length > 5)
+            // return apicallFiltered
+
+
+
+
+
+
+        })
+
+    }
 
 
 
