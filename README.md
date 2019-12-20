@@ -1,6 +1,6 @@
 # React Employee Directory
 
-![demogif](/public/gifdemo.gif) 
+ 
 ![demopic](/public/demo.png) 
 
 
@@ -26,7 +26,9 @@ Adding associate about page/modal
 - [Moment.js](https://momentjs.com/) 
 
 
+### Demo
 
+![demogif](/public/gifdemo.gif)
 
 
 
