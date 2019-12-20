@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 
+
 function SearchBox(props) {
 
 
@@ -11,14 +12,16 @@ function SearchBox(props) {
                 <input
                     onChange={props.handleInputChange}
                     value={props.value}
-                    id="search"
+                    id="employees"
                     type="text"
                     name="search"
+                    list="employee"
                     className="validate inputBox "
                     placeholder="Search by name" />
                 <button
                     type="submit"
-                    className=" btn btn-medium waves-effect deep-purple lighten-1"
+                    value=""
+                    className=" btn z-depth-1 waves-effect  searchBttn"
                     onClick={props.handleSearch} >Search</button>
             </div>
         </div>

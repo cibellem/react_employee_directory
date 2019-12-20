@@ -9,6 +9,8 @@ class Container extends Component {
 
     // Setting the component's initial state
 
+
+
     state = {
         search: "",
         employees: [],
@@ -50,13 +52,24 @@ class Container extends Component {
 
         }
     }
-
+    //when input is changing it will dynamically show the associates names that match in the screen
     handleInputChange = event => {
-        const value = event.target.value;
-        const name = event.target.name;
+
+        const employees = this.state.employees;
+        const UserInput = event.target.value;
+        const filteredEmployees = employees.filter(employee => employee.name.first.toLowerCase().indexOf(UserInput.toLowerCase()) > -1
+        )
         this.setState({
-            [name]: value
+
+            filteredEmployees,
+
         });
+
+
+
+
+
+
     };
 
 
@@ -73,7 +86,11 @@ class Container extends Component {
     //when button search it's clicked
     handleSearch = event => {
         event.preventDefault();
+        if (!this.state.search) {
+            alert("Enter a name")
+        }
         const { employees, search } = this.state;
+        //filter the objecth looking for the value that matches search.this.state (value entered in the input box)
 
         const filteredEmployees = employees.filter(employee => employee.name.first.toLowerCase().includes(search.toLowerCase()));
 
@@ -90,7 +107,7 @@ class Container extends Component {
             <div>
                 <NavBar />
                 <SearchBox
-                    value={this.state.search}
+                    employee={this.state.employees}
                     handleSearch={this.handleSearch}
                     handleInputChange={this.handleInputChange} />
                 <TableData results={this.state.filteredEmployees}

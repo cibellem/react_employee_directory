@@ -5,9 +5,9 @@ function NavBar() {
 
     return (
 
-        <header className="   teal darken-1 z-depth-4" >
-            <h3 className="center-align white-text lighten-3 headerText">Associate Directory</h3>
-            <h6 className="center-align white-text lighten-5 ">Use the box down below to narrow your search</h6>
+        <header className=" z-depth-2" >
+            <h3 className="center-align headerText">Associate Directory</h3>
+            <h6 className="center-align smallerHeaderText">Use the box down below to narrow your search</h6>
         </header >
     )
 }

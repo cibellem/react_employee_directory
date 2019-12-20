@@ -3,7 +3,7 @@
 
 
 ### Description
-Employee search directory built with React.js components
+Employee search directory built with React.js components with autofill suggestions based on the user's input
 
 
 **Key words**: 
@@ -18,6 +18,7 @@ Employee search directory built with React.js components
 ### Technologies-Libraries
 - [React.js](https://reactjs.org//) 
 - [Materialize](https://materializecss.com/) 
+-[Moment.js](https://momentjs.com/) 
 
 
 

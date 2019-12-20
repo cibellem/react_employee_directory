@@ -3,11 +3,8 @@ import Moment from 'react-moment';
 import "./style.css";
 
 function TableData(props) {
-    console.log(props)
-
-
-    return (
-        <table className="striped container">
+      return (
+        <table className="tableEmployee ">
             <thead>
                 <tr>
                     <th></th>
@@ -18,12 +15,16 @@ function TableData(props) {
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody className= "">
                 {props.results.map(result => (
                     <tr className="table" key={result.login.uuid}>
-                        <td> <img className=" z-depth-2
-                        "src={result.picture.large} alt="" /></td>
+                     
+
+                        <td> <img className="
+                        "src={result.picture.medium} alt="" /></td>
+                        
                         <td>{result.name.first + " " + result.name.last}  </td>
+
                         <td>{result.cell}</td>
                         <td className="email">{result.email}</td>
                         <td><Moment format="MM/DD/YYYY">{result.dob.date}</Moment></td>

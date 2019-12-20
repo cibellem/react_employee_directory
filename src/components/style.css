@@ -1,37 +1,65 @@
 body {
-    font-family: 'Karla', sans-serif;
-    background-color:#e0f2f1 
+   
+ 
+   background-color: ghostwhite
+   
 }
 
 
 th {
  
-    font-size: 16px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    font-family: 'Catamaran', sans-serif;
+    color: silver;
+    cursor: pointer;
 }
+
 
 
 .email {
-    color: rgb(64, 64, 248);
+    color: rgb(28, 28, 189);
     
 }
 
-button{
-    letter-spacing: 1px;
-    padding: 10px;
+.searchBttn{
+    letter-spacing: 1px !important;;
+    font-size:10px ;
+    background-color:silver!important;
+    border-radius: 20px;
+    
+   
+   
 }
 header {
-    padding: 10px;  
-    margin-top: 30px;   
+    padding: 10px;     
+    
+    background-color: goldenrod;
 }
 
 img {
-    border-radius: 50%;
-    
+    border-radius: 50%;  
+    box-shadow: black 1px 1px 8px;  
  }
 
 
  .headerText {
     letter-spacing: 1px;
+    font-size: 55px;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: lighter;
+
+ 
+    
+    color:white
+ }
+
+ .smallerHeaderText{
+   color:white;
+    font-family: 'Heebo', sans-serif;
+    letter-spacing: 1px;
+    line-height: 0px;
+    margin-top: 0;
  }
 
  .input {
@@ -39,3 +67,22 @@ img {
  
 
  }
+ .tableEmployee{
+     margin-left: 40px;
+     margin-right: 40px;
+     padding: 0px;
+     font-family: 'Catamaran', sans-serif;
+    
+ }
+
+ /* font-family: 'Karla', sans-serif; */
+
+ 
+  td {
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      font-family: 'Catamaran', sans-serif;
+  }
+
+
+  
