@@ -10,7 +10,7 @@ function TableData(props) {
         <table className="striped container">
             <thead>
                 <tr>
-                    <th>Image</th>
+                    <th></th>
                     <th onClick={props.sortByName}>Name</th>
                     <th>Phone</th>
                     <th>E-mail</th>
@@ -21,7 +21,8 @@ function TableData(props) {
             <tbody>
                 {props.results.map(result => (
                     <tr className="table" key={result.login.uuid}>
-                        <td> <img src={result.picture.medium} alt="" /></td>
+                        <td> <img className=" z-depth-2
+                        "src={result.picture.large} alt="" /></td>
                         <td>{result.name.first + " " + result.name.last}  </td>
                         <td>{result.cell}</td>
                         <td className="email">{result.email}</td>

@@ -14,17 +14,11 @@ function SearchBox(props) {
                     id="search"
                     type="text"
                     name="search"
-                    className="validate "
+                    className="validate inputBox "
                     placeholder="Search by name" />
-
-                {/* <datalist id="breeds">
-                    {props.breeds.map(breed => (
-                        <option value={breed} key={breed} />
-                    ))}
-                </datalist> */}
                 <button
                     type="submit"
-                    className=" btn btn-medium waves-effect indigo lighten-3"
+                    className=" btn btn-medium waves-effect deep-purple lighten-1"
                     onClick={props.handleSearch} >Search</button>
             </div>
         </div>

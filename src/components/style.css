@@ -1,12 +1,12 @@
 body {
     font-family: 'Karla', sans-serif;
-    background-color: ghostwhite;
+    background-color:#e0f2f1 
 }
 
 
 th {
  
-    font-size: 18px;
+    font-size: 16px;
 }
 
 
@@ -15,11 +15,27 @@ th {
     
 }
 
+button{
+    letter-spacing: 1px;
+    padding: 10px;
+}
 header {
     padding: 10px;  
-    margin-top: 30px;
+    margin-top: 30px;   
 }
 
 img {
     border-radius: 50%;
-}
+    
+ }
+
+
+ .headerText {
+    letter-spacing: 1px;
+ }
+
+ .input {
+     background-color: black;
+ 
+
+ }
