@@ -1,41 +1,60 @@
 body {
    
  
-   background-color: ghostwhite
+    background-color: ghostwhite
    
 }
-
+ table{
+     margin-top: 15px;
+ }
 
 th {
- 
-    font-size: 18px;
-    letter-spacing: 1.5px;
-    font-family: 'Catamaran', sans-serif;
+    
+    font-size: 17px;
+    letter-spacing: 1px;
+    font-family: 'Inria Serif', serif;
     color: silver;
     cursor: pointer;
-}
-
-
-
-.email {
-    color: rgb(28, 28, 189);
     
 }
+
+
+header {
+    padding: 15px;
+}
+.email {
+    color:rgb(28, 28, 235);
+    font-size: 15px;
+   
+    
+    
+}
+.inputAndButton{
+    margin-top:40px
+}
+
 
 .searchBttn{
+    margin-top:40px;
+    border-radius: 20px;;
     letter-spacing: 1px !important;;
     font-size:10px ;
-    background-color:silver!important;
-    border-radius: 20px;
+    background-color: #2b4162;
+    background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
+    
+
+    font-weight: bolder;
     
    
    
 }
-header {
+/* header {
     padding: 10px;     
+    background-color: #cfd6e6
+
     
-    background-color: goldenrod;
-}
+ 
+} */
 
 img {
     border-radius: 50%;  
@@ -43,35 +62,50 @@ img {
  }
 
 
+
  .headerText {
     letter-spacing: 1px;
-    font-size: 55px;
-    font-family: 'Catamaran', sans-serif;
+    font-size: 60px;
+    font-family: 'Inria Serif', serif;
     font-weight: lighter;
-
- 
-    
-    color:white
+    text-shadow: rgb(102, 102, 102) 1px 1px 1px;   
+    color: black
  }
 
+ input:focus, input.form-control:focus {
+
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow:none !important;;
+    -moz-box-shadow: none !important;;
+    -webkit-box-shadow: none !important;;
+   
+}
+input {
+    
+color: gray !important;
+   
+}
  .smallerHeaderText{
-   color:white;
-    font-family: 'Heebo', sans-serif;
-    letter-spacing: 1px;
+   color: white;
+   font-family: 'Catamaran', sans-serif;
+    letter-spacing: 0.5px;
     line-height: 0px;
+   
+font-weight: lighter;
+  
+    
+    
     margin-top: 0;
  }
 
- .input {
-     background-color: black;
- 
 
- }
  .tableEmployee{
      margin-left: 40px;
      margin-right: 40px;
      padding: 0px;
      font-family: 'Catamaran', sans-serif;
+     
     
  }
 
@@ -82,6 +116,8 @@ img {
       font-size: 16px;
       letter-spacing: 0.5px;
       font-family: 'Catamaran', sans-serif;
+      font-weight: bold;
+    
   }
 
 

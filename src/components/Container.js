@@ -1,21 +1,21 @@
 import API from "../utils/API";
 import React, { Component } from "react"
-import NavBar from "./navBar"
-import SearchBox from "./SearchBox"
+import SearchBox from "./navBar"
+// import SearchBox from "./SearchBox"
 import TableData from "./TableData"
 import "./style.css";
 
 class Container extends Component {
 
     // Setting the component's initial state
-
-
-
+    //search starts as an empty string
+    //employess and filteredEmployess are empty arrays because that it's the structure of the data we'll be working with
+    //order it's to reference the order that the employees are. By defaltu they come randonly and the first click will trigger then to be in asc order
     state = {
         search: "",
         employees: [],
         filteredEmployees: [],
-        order: "asc"
+        order: ""
 
     };
 
@@ -60,6 +60,8 @@ class Container extends Component {
         const filteredEmployees = employees.filter(employee => employee.name.first.toLowerCase().indexOf(UserInput.toLowerCase()) > -1
         )
         this.setState({
+            //change the state of  filteredEmployes now it holds all the employes that matches users
+            // search and will be passed down in this state
 
             filteredEmployees,
 
@@ -73,10 +75,13 @@ class Container extends Component {
     };
 
 
-    //API call
+    //API call triggered when page it's refreshed and  when application it's loaded 
     employeeSearch = () => {
         API.getUsers()
             .then(res => this.setState({
+
+                //change their both states to hold all the data from the API call(all employess) and will be passed down trough props like that
+                //employee will remain the same and filteredEmployes will be changed and passed down during application's life. Employee will always hold all employess.
                 filteredEmployees: res.data.results,
                 employees: res.data.results
             }))
@@ -90,8 +95,8 @@ class Container extends Component {
             alert("Enter a name")
         }
         const { employees, search } = this.state;
-        //filter the objecth looking for the value that matches search.this.state (value entered in the input box)
 
+        //filters the object looking for the value that matches the value entered in the input box by the user  (search.this.state)
         const filteredEmployees = employees.filter(employee => employee.name.first.toLowerCase().includes(search.toLowerCase()));
 
         this.setState({
@@ -105,7 +110,7 @@ class Container extends Component {
 
         return (
             <div>
-                <NavBar />
+                {/* <NavBar /> */}
                 <SearchBox
                     employee={this.state.employees}
                     handleSearch={this.handleSearch}

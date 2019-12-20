@@ -26,7 +26,7 @@ function TableData(props) {
                         <td>{result.name.first + " " + result.name.last}  </td>
 
                         <td>{result.cell}</td>
-                        <td className="email">{result.email}</td>
+                        <td className="email"><a href={result.email}>{result.email}</a></td>
                         <td><Moment format="MM/DD/YYYY">{result.dob.date}</Moment></td>
 
                     </tr>
