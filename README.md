@@ -16,8 +16,9 @@ Employee search directory built with React.js components with autofill suggestio
 *Props and Components*
 
 ### Future Development Plant
-Building extras search filters such as department;
-Adding associate about page/modal 
+Building extras search filters such as department; <br>
+Adding associate about page/modal <br>
+Make it mobile friendly
 
 
 ### Technologies-Libraries
@@ -32,7 +33,7 @@ Adding associate about page/modal
 
 
 
-### Link to deployed application
+### Link to Deployed Application
 Check it out!  
 [https://glacial-lake-21367.herokuapp.com/]
 
