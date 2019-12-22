@@ -1,6 +1,6 @@
 import API from "../utils/API";
 import React, { Component } from "react"
-import SearchBox from "./navBar"
+import SearchBox from "./SearchBox"
 // import SearchBox from "./SearchBox"
 import TableData from "./TableData"
 import "./style.css";
@@ -18,7 +18,6 @@ class Container extends Component {
         order: ""
 
     };
-
 
     // this is the initialization, what do you want the page to display when page it's first loaded
     componentDidMount() {
@@ -68,10 +67,6 @@ class Container extends Component {
         });
 
 
-
-
-
-
     };
 
 
@@ -110,7 +105,7 @@ class Container extends Component {
 
         return (
             <div>
-                {/* <NavBar /> */}
+
                 <SearchBox
                     employee={this.state.employees}
                     handleSearch={this.handleSearch}
