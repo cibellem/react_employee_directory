@@ -12,10 +12,10 @@ Employee search directory built with React.js components with autofill suggestio
 *React.js*,
 *Array Methods,*
 *Apis,*
-*Ajax Calls,
+*Ajax Calls,*
 *Props and Components*
 
-### Future Development Plant
+### Future Development Plan
 Building extras search filters such as department; <br>
 Adding associate about page/modal <br>
 Make it mobile friendly
